@@ -222,7 +222,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!136 &400949685
 CapsuleCollider:
@@ -856,7 +856,7 @@ PrefabInstance:
     - target: {fileID: 6464479132769630160, guid: 9e9293b5f5002cd4f9393123e4e7fe96,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.34
+      value: 17.4
       objectReference: {fileID: 0}
     - target: {fileID: 6464479132769630160, guid: 9e9293b5f5002cd4f9393123e4e7fe96,
         type: 3}
