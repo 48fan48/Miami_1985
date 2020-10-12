@@ -137,22 +137,22 @@ PrefabInstance:
     - target: {fileID: 1046446337789844658, guid: 4e5d0daefaaf553449b490651cc7113a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1046446337789844658, guid: 4e5d0daefaaf553449b490651cc7113a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.72134644
+      value: -0.72134936
       objectReference: {fileID: 0}
     - target: {fileID: 1046446337789844658, guid: 4e5d0daefaaf553449b490651cc7113a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1046446337789844658, guid: 4e5d0daefaaf553449b490651cc7113a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.69257444
+      value: 0.69257146
       objectReference: {fileID: 0}
     - target: {fileID: 1046446337789844658, guid: 4e5d0daefaaf553449b490651cc7113a,
         type: 3}
@@ -238,6 +238,25 @@ CapsuleCollider:
   m_Height: 2.0273004
   m_Direction: 1
   m_Center: {x: -0.0046429336, y: 0.901147, z: -6.485812e-12}
+--- !u!95 &400949686
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400949682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: cb71e0b181fbc8c4a9a3e9f45f8448f3, type: 3}
+  m_Controller: {fileID: 9100000, guid: c386b165961c6f042808fd50747dc6a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &643823887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -856,7 +875,7 @@ PrefabInstance:
     - target: {fileID: 6464479132769630160, guid: 9e9293b5f5002cd4f9393123e4e7fe96,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.4
+      value: 17.59
       objectReference: {fileID: 0}
     - target: {fileID: 6464479132769630160, guid: 9e9293b5f5002cd4f9393123e4e7fe96,
         type: 3}
