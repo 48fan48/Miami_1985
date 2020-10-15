@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(projectilePrefab, transform.position, transform.rotation);
         }
-
     }
+
+    
 }
