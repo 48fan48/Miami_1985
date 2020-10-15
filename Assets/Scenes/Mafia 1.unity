@@ -279,6 +279,8 @@ MonoBehaviour:
   horizontalInput: 0
   verticalInput: 0
   speed: 10
+  projectilePrefab: {fileID: 3038504036661467098, guid: 9e1a1ef6770c2f6428adea178d679ea2,
+    type: 3}
 --- !u!54 &400949684
 Rigidbody:
   m_ObjectHideFlags: 0
