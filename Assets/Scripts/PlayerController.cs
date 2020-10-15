@@ -8,10 +8,11 @@ public class PlayerController : MonoBehaviour
     public float verticalInput;
     public float speed = 10;
     public GameObject projectilePrefab;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,12 +23,15 @@ public class PlayerController : MonoBehaviour
 
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
-
+        animator.SetFloat("vertical", verticalInput);
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(projectilePrefab, transform.position, transform.rotation);
         }
+
+        
     }
 
-    
+
 }
