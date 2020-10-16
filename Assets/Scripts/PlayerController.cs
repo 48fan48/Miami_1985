@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
     public float verticalInput;
-    public float speed = 10;
+    public float speed = 3;
     public GameObject projectilePrefab;
     private Animator animator;
     // Start is called before the first frame update
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
+        animator.SetFloat("Horizontal", horizontalInput);
 
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
