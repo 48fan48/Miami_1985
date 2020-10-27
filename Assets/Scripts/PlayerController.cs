@@ -31,8 +31,10 @@ public class PlayerController : MonoBehaviour
             Instantiate(projectilePrefab, transform.position, transform.rotation);
         }
 
-        
+        //Needs work, but turns user based on mouse position
+        Vector3 input = Input.mousePosition;
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(input.x, input.y, Camera.main.transform.position.y));
+        transform.LookAt(0.3f * mousePosition + Vector3.up * transform.position.y);
     }
-
 
 }
