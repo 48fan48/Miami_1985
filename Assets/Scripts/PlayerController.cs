@@ -35,6 +35,12 @@ public class PlayerController : MonoBehaviour
         Vector3 input = Input.mousePosition;
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(input.x, input.y, Camera.main.transform.position.y));
         transform.LookAt(0.3f * mousePosition + Vector3.up * transform.position.y);
+
+        if (horizontalInput == 0 && verticalInput == 0) {
+            animator.SetBool("StandingStill", true);
+        } else {
+            animator.SetBool("StandingStill", false);
+        }
     }
 
 }
