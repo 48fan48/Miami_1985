@@ -1043,7 +1043,7 @@ GameObject:
   - component: {fileID: 910150194}
   - component: {fileID: 910150196}
   - component: {fileID: 910150195}
-  - component: {fileID: 910150198}
+  - component: {fileID: 910150197}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1115,7 +1115,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &910150198
+--- !u!114 &910150197
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
