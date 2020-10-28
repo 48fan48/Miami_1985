@@ -292,6 +292,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fidel
       objectReference: {fileID: 0}
+    - target: {fileID: 1046446337790263506, guid: 4e5d0daefaaf553449b490651cc7113a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2683902665218241364, guid: 4e5d0daefaaf553449b490651cc7113a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1256,9 +1261,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1201308550}
+  - component: {fileID: 1201308551}
   m_Layer: 0
   m_Name: Enemies
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1284,6 +1290,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1201308551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201308549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54486ac301f57e143a9344c9b3973923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &1357151204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2381974891840248572, guid: d1e31eb2e5052f34d8ba0948ebc2edb9,
