@@ -32,9 +32,17 @@ public class PlayerController : MonoBehaviour
         }
 
         //Needs work, but turns user based on mouse position
+        /*
         Vector3 input = Input.mousePosition;
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(input.x, input.y, Camera.main.transform.position.y));
-        transform.LookAt(0.3f * mousePosition + Vector3.up * transform.position.y);
+        transform.LookAt(0.3f * mousePosition + Vector3.up * transform.position.y);*/
+        if(Input.GetAxis("Mouse X") < 0){
+            transform.Rotate(Vector3.up * -5);
+        }
+
+        if(Input.GetAxis("Mouse X") > 0){
+            transform.Rotate(Vector3.up * 5);
+        }
 
         if (horizontalInput == 0 && verticalInput == 0) {
             animator.SetBool("StandingStill", true);
