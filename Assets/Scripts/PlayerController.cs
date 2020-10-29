@@ -20,14 +20,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
-        animator.SetFloat("Horizontal", horizontalInput);
+        //horizontalInput = Input.GetAxis("Horizontal");
+        //transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
+        // animator.SetFloat("Horizontal", horizontalInput);
 
-        verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
-        animator.SetFloat("vertical", verticalInput);
-        
+        //verticalInput = Input.GetAxis("Vertical");
+        // transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
+        // animator.SetFloat("vertical", verticalInput);
+        altMove();
+        shoot();
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(projectilePrefab, transform.position, transform.rotation);
@@ -66,6 +67,35 @@ public class PlayerController : MonoBehaviour
           
         }
 
+    }
+
+    public void altMove()
+    {
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += Vector3.forward * speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += Vector3.back* speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += Vector3.left * speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position += Vector3.right * speed * Time.deltaTime;
+        }
+    }
+
+    public void shoot()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(projectilePrefab, transform.position, transform.rotation);
+        }
     }
 
 }
