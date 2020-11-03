@@ -21,4 +21,9 @@ public class MenuOptions : MonoBehaviour
     public void PlayGame(){
         SceneManager.LoadScene("Mafia 1");
     }
+
+    //Quits the game when the player chooses the "Quit" menu item
+    public void ExitGame(){
+        Application.Quit();
+    }
 }
