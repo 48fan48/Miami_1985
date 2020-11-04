@@ -3766,10 +3766,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 595076734}
     m_Modifications:
+    - target: {fileID: 451192284885894050, guid: 9e9293b5f5002cd4f9393123e4e7fe96,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2910034236982475430, guid: 9e9293b5f5002cd4f9393123e4e7fe96,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4187247289680115009, guid: 9e9293b5f5002cd4f9393123e4e7fe96,
         type: 3}
       propertyPath: m_Name
       value: Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237624774677279942, guid: 9e9293b5f5002cd4f9393123e4e7fe96,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6464479132769630160, guid: 9e9293b5f5002cd4f9393123e4e7fe96,
         type: 3}
