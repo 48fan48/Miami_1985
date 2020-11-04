@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public GameObject projectilePrefab;
     private Animator animator;
     private Camera mainCamera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,15 +59,16 @@ public class PlayerController : MonoBehaviour
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
         float rayLength;
 
-        if(groundPlane.Raycast(cameraRay , out rayLength))
-        {
-            Vector3 lookPoint = cameraRay.GetPoint(rayLength);
-            Debug.DrawLine(cameraRay.origin, lookPoint, Color.blue);
+        if(Time.deltaTime != 0){
+            if(groundPlane.Raycast(cameraRay , out rayLength))
+            {
+                Vector3 lookPoint = cameraRay.GetPoint(rayLength);
+                Debug.DrawLine(cameraRay.origin, lookPoint, Color.blue);
 
-            transform.LookAt(new Vector3(lookPoint.x, transform.position.y, lookPoint.z));
+                transform.LookAt(new Vector3(lookPoint.x, transform.position.y, lookPoint.z));
           
+            }
         }
-
     }
 
     public void altMove()
@@ -92,7 +94,7 @@ public class PlayerController : MonoBehaviour
 
     public void shoot()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.deltaTime != 0)
         {
             Instantiate(projectilePrefab, transform.position, transform.rotation);
         }
