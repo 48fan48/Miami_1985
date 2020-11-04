@@ -2017,30 +2017,6 @@ MonoBehaviour:
   timeBtwShots: 0.25
   fireRadius: 25
   force: 2000
---- !u!1 &1226811546 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3191221269693405097, guid: 44d57cfa07de346458450744785d8a7e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1466385770}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1226811549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1226811546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54486ac301f57e143a9344c9b3973923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  projectilePrefab: {fileID: 3038504036661467098, guid: 9e1a1ef6770c2f6428adea178d679ea2,
-    type: 3}
-  timeBtwShots: 0.25
-  fireRadius: 25
-  force: 2000
 --- !u!1 &1357151204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2381974891840248572, guid: d1e31eb2e5052f34d8ba0948ebc2edb9,

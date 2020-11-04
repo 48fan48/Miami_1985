@@ -30,30 +30,6 @@ public class PlayerController : MonoBehaviour
         // animator.SetFloat("vertical", verticalInput);
         altMove();
         shoot();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(projectilePrefab, transform.position, transform.rotation);
-        }
-
-        //Needs work, but turns user based on mouse position
-        /*
-        Vector3 input = Input.mousePosition;
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(input.x, input.y, Camera.main.transform.position.y));
-        transform.LookAt(0.3f * mousePosition + Vector3.up * transform.position.y);*/
-        /* if(Input.GetAxis("Mouse X") < 0){
-            transform.Rotate(Vector3.up * -5);
-         }
-
-         if(Input.GetAxis("Mouse X") > 0){
-             transform.Rotate(Vector3.up * 5);
-         }
-
-         if (horizontalInput == 0 && verticalInput == 0) {
-             animator.SetBool("StandingStill", true);
-         } else {
-             animator.SetBool("StandingStill", false);
-         }
-         */
 
         Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
@@ -74,21 +50,41 @@ public class PlayerController : MonoBehaviour
     public void altMove()
     {
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D)) 
         {
             transform.position += Vector3.forward * speed * Time.deltaTime;
+            animator.SetBool("Move Right", true);
+        } 
+        if (Input.GetKeyUp(KeyCode.D)) 
+        {
+            animator.SetBool("Move Right", false);
         }
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.back* speed * Time.deltaTime;
+            animator.SetBool("Move Left", true);
+        } 
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            animator.SetBool("Move Left", false);
         }
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
+            animator.SetBool("Move Forward", true);
+        }
+        if (Input.GetKeyUp(KeyCode.W)) 
+        {
+            animator.SetBool("Move Forward", false);
         }
         if (Input.GetKey(KeyCode.S))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
+            animator.SetBool("Move Backwards", true);
+        }
+        if (Input.GetKeyUp(KeyCode.S)) 
+        {
+            animator.SetBool("Move Backwards", false);
         }
     }
 
