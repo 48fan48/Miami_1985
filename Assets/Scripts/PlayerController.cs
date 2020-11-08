@@ -10,24 +10,20 @@ public class PlayerController : MonoBehaviour
     public GameObject projectilePrefab;
     private Animator animator;
     private Camera mainCamera;
+    private AudioSource gunShot;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         mainCamera = FindObjectOfType<Camera>();
+        gunShot = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //horizontalInput = Input.GetAxis("Horizontal");
-        //transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
-        // animator.SetFloat("Horizontal", horizontalInput);
 
-        //verticalInput = Input.GetAxis("Vertical");
-        // transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
-        // animator.SetFloat("vertical", verticalInput);
         altMove();
         shoot();
 
@@ -40,9 +36,7 @@ public class PlayerController : MonoBehaviour
             {
                 Vector3 lookPoint = cameraRay.GetPoint(rayLength);
                 Debug.DrawLine(cameraRay.origin, lookPoint, Color.blue);
-
                 transform.LookAt(new Vector3(lookPoint.x, transform.position.y, lookPoint.z));
-          
             }
         }
     }
@@ -93,6 +87,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Time.deltaTime != 0)
         {
             Instantiate(projectilePrefab, transform.position, transform.rotation);
+            gunShot.Play();
         }
     }
 
