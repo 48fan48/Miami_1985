@@ -30,6 +30,7 @@ public class Patrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Make the enemey go to the next point
         if (!agent.pathPending && agent.remainingDistance < 0.5f) 
         {
             GotoNextPoint();

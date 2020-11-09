@@ -24,6 +24,7 @@ public class MoverForward : MonoBehaviour
     // When the bullet collides with the enemy
     void OnTriggerEnter(Collider other)
     {
+        // If the bullet hits an enemy
         if(other.gameObject.CompareTag("Enemy")){
             // Destroy the bullet
             Destroy(gameObject);
@@ -33,9 +34,13 @@ public class MoverForward : MonoBehaviour
             enemyScript.updateHealth(damage);
         }
 
+        // If the bullet hits the player
         if(other.gameObject.CompareTag("Player")){
+            // Destroy the bullet
             Destroy(gameObject);
+            // Get the player controller script
             playerScript = other.gameObject.GetComponent<PlayerController>();
+            // Decrease the player health by 5
             playerScript.decreaseHealth(5);
         }
     }
