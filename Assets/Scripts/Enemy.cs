@@ -63,6 +63,8 @@ private float timerDeath;
         // If the player position is in range
         if(Physics.SphereCast(playerPos, 0.25f, out hitPlayer, fireRadius))
         {
+
+            transform.LookAt(player.transform);
             // Used so the enemy can't spam bullets; creates a time between shots
             if (timerShots <= 0 && hitPlayer.transform.tag == "Player")
             {
