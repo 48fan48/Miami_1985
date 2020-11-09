@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private Camera mainCamera;
     private AudioSource gunShot;
+    public float health = 100f;
+    public GameObject gameOverMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,10 @@ public class PlayerController : MonoBehaviour
                 Debug.DrawLine(cameraRay.origin, lookPoint, Color.blue);
                 transform.LookAt(new Vector3(lookPoint.x, transform.position.y, lookPoint.z));
             }
+        }
+
+        if(health <= 0){
+            GameOver();
         }
     }
 
@@ -86,9 +92,18 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && Time.deltaTime != 0)
         {
-            Instantiate(projectilePrefab, transform.position + new Vector3(0,1.7f,0), transform.rotation);
+            Instantiate(projectilePrefab, transform.position + new Vector3(-1f,1.7f,0), transform.rotation);
             gunShot.Play();
         }
+    }
+
+    public void decreaseHealth(int healthDecrease){
+        health -= healthDecrease;
+    }
+
+    public void GameOver(){
+        gameOverMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
 
 }

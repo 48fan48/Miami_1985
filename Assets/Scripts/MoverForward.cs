@@ -7,6 +7,7 @@ public class MoverForward : MonoBehaviour
     public float speed = 40;
     public float damage = 20;
     private Enemy enemyScript;
+    private PlayerController playerScript;
     
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,12 @@ public class MoverForward : MonoBehaviour
             enemyScript = other.gameObject.GetComponent<Enemy>();
             // Lower the enemy health
             enemyScript.updateHealth(damage);
+        }
+
+        if(other.gameObject.CompareTag("Player")){
+            Destroy(gameObject);
+            playerScript = other.gameObject.GetComponent<PlayerController>();
+            playerScript.decreaseHealth(5);
         }
     }
 }
