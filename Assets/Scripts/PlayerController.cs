@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private AudioSource gunShot;
     public float health = 100f;
     public GameObject gameOverMenu;
+    public bool gameIsOver = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -103,6 +105,7 @@ public class PlayerController : MonoBehaviour
 
     public void GameOver(){
         gameOverMenu.SetActive(true);
+        gameIsOver = true;
         Time.timeScale = 0f;
     }
 

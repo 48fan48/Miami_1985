@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject gameOverMenu;
     private AudioSource [] allAudioSource;
+    public PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +29,14 @@ public class PauseMenu : MonoBehaviour
     }
 
     void Pause(){
-        pauseMenu.SetActive(true);
-        foreach(AudioSource audio in allAudioSource){
-            audio.Stop();
+        if(!playerController.gameIsOver){
+            pauseMenu.SetActive(true);
+            foreach(AudioSource audio in allAudioSource){
+                audio.Stop();
+            }
+            Time.timeScale = 0f;
+            IsPaused = true;
         }
-        Time.timeScale = 0f;
-        IsPaused = true;
     }
 
     public void Resume(){

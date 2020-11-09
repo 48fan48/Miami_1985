@@ -899,6 +899,7 @@ MonoBehaviour:
     type: 3}
   health: 100
   gameOverMenu: {fileID: 363088883}
+  gameIsOver: 0
 --- !u!54 &400949684
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4988,6 +4989,7 @@ MonoBehaviour:
   IsPaused: 0
   pauseMenu: {fileID: 2016282152}
   gameOverMenu: {fileID: 363088883}
+  playerController: {fileID: 400949683}
 --- !u!1 &2117292404 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3191221269693405097, guid: 44d57cfa07de346458450744785d8a7e,
