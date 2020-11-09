@@ -67,7 +67,7 @@ private float timerDeath;
             if (timerShots <= 0 && hitPlayer.transform.tag == "Player")
             {
                 // Create the bullet
-                Instantiate(projectilePrefab, transform.position + new Vector3(1,0,0), transform.rotation);
+                Instantiate(projectilePrefab, transform.position + new Vector3(1,1.7f,0), transform.rotation);
                 // Play the gun shot
                 gunShot.Play();
                 // Set the timer 

@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && Time.deltaTime != 0)
         {
-            Instantiate(projectilePrefab, transform.position, transform.rotation);
+            Instantiate(projectilePrefab, transform.position + new Vector3(0,1.7f,0), transform.rotation);
             gunShot.Play();
         }
     }
