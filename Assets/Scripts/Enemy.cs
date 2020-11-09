@@ -17,6 +17,7 @@ public float timeBtwShots = 2f;
 public float timeForDeath = 4f;
 public float fireRadius = 5f;
 public float force = 2000f;
+public bool isDead = false;
 
 private Animator animator;
 private AudioSource gunShot;
@@ -47,6 +48,7 @@ private float timerDeath;
 
          // Destroy the enemy if the health is less than or equal to 0
         if(health <= 0) {
+            isDead = true;
             StartCoroutine(DeathAnimation());
         }
 

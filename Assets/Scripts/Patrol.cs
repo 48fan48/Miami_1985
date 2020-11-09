@@ -5,27 +5,41 @@ using UnityEngine.AI;
 
 public class Patrol : MonoBehaviour
 {
-        public Transform[] points;
-        private int destPoint = 0;
-        private NavMeshAgent agent;
+        
+    public Transform[] points;
+    private NavMeshAgent agent;
+    private Enemy enemyScript;
+    private int destPoint = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
 
-            // Disabling auto-braking allows for continuous movement
-            // between points (ie, the agent doesn't slow down as it
-            // approaches a destination point).
-            agent.autoBraking = false;
+        // Disabling auto-braking allows for continuous movement
+        // between points (ie, the agent doesn't slow down as it
+        // approaches a destination point).
+        agent.autoBraking = false;
 
-            GotoNextPoint();
+        // Get the enemy script
+        enemyScript = gameObject.GetComponent<Enemy>();
+
+        GotoNextPoint();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-                GotoNextPoint();
+        if (!agent.pathPending && agent.remainingDistance < 0.5f) 
+        {
+            GotoNextPoint();
+        }
+
+        // Stop the enemy movement when health is less than or equal to zero
+        if (enemyScript.health <= 0)
+        {
+            agent.Stop();
+        }
     }
 
     void GotoNextPoint() {
