@@ -54,7 +54,6 @@ private static float playerScore;
          // Destroy the enemy if the health is less than or equal to 0
         if(health <= 0) {
             isDead = true;
-            UpdateScore(100);
             StartCoroutine(DeathAnimation());
         }
 
@@ -111,8 +110,11 @@ private static float playerScore;
         animator.SetBool("isDead", true);
         // Wait till the animation finshes
         yield return new WaitForSeconds(4.3f);
+        //Update the score after the enemy has died
+        UpdateScore(100);
         // Destroy the enemy once the animation is finished
         Destroy(gameObject);
+        
     }
 
 }
