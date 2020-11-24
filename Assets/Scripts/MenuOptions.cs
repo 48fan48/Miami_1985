@@ -19,10 +19,12 @@ public class MenuOptions : MonoBehaviour
 
     //Loads the game when the player chooses the "Start" menu item
     public void PlayGame(){
+        //If the player went from the game to the menu, then timeScale is set to 0, reset it to 1
         if(Time.timeScale == 0f){
             Time.timeScale = 1f;
         }
-        
+
+        //Load the first Scene (Will be changed to load based on file input)
         SceneManager.LoadScene("Mafia 1");
     }
 
