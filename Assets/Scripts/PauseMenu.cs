@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     private AudioSource [] allAudioSource;
     public PlayerController playerController;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI healthText;
     // Start is called before the first frame update
     void Start()
     {

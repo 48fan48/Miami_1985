@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float health = 100f;
     public GameObject gameOverMenu;
     public bool gameIsOver = false;
+    public PauseMenu pauseMenuScript;
     
 
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         mainCamera = FindObjectOfType<Camera>();
         gunShot = GetComponent<AudioSource>();
+        pauseMenuScript = GameObject.Find("Canvas").GetComponent<PauseMenu>();
     }
 
     // Update is called once per frame
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour
 
     public void decreaseHealth(int healthDecrease){
         health -= healthDecrease;
+        pauseMenuScript.healthText.text = "Health: " + health;
     }
 
     public void GameOver(){
