@@ -39,6 +39,7 @@ public class Patrol : MonoBehaviour
         // Stop the enemy movement when health is less than or equal to zero
         if (enemyScript.health <= 0)
         {
+
             agent.Stop();
         }
     }
