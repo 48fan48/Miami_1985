@@ -28,12 +28,16 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    //Opens the pause menu
     void Pause(){
+        //If the game is over, do not allow the user to pause the game
         if(!playerController.gameIsOver){
             pauseMenu.SetActive(true);
+            //Stop all audio sources
             foreach(AudioSource audio in allAudioSource){
                 audio.Stop();
             }
+            //Stop all movement
             Time.timeScale = 0f;
             IsPaused = true;
         }
@@ -41,9 +45,11 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume(){
         pauseMenu.SetActive(false);
+        //Start all audio sources
         foreach(AudioSource audio in allAudioSource){
             audio.Play();
         }
+        //Start all movement
         Time.timeScale = 1f;
         IsPaused = false;
     }
