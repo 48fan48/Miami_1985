@@ -33,7 +33,7 @@ public class PauseMenu : MonoBehaviour
 
     //Opens the pause menu
     void Pause(){
-        scoreMenu.SetActive(false);
+        //scoreMenu.SetActive(false);
         //If the game is over, do not allow the user to pause the game
         if(!playerController.gameIsOver){
             pauseMenu.SetActive(true);
@@ -48,7 +48,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Resume(){
-        scoreMenu.SetActive(true);
+       // scoreMenu.SetActive(true);
         pauseMenu.SetActive(false);
         //Start all audio sources
         foreach(AudioSource audio in allAudioSource){
