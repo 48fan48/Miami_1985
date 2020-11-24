@@ -24,12 +24,14 @@ private AudioSource gunShot;
 private float timerShots;
 private float timerDeath;
 private PauseMenu pauseMenuScript;
+private static float playerScore;
 
     // Start is called before the first frame update
     void Start()
     {
         // Get the player object 
         player = GameObject.Find("Fidel");
+        playerScore = 0;
         // Get the animator
         animator = GetComponent<Animator>();
         // Get the gun shot audio source
@@ -52,9 +54,15 @@ private PauseMenu pauseMenuScript;
          // Destroy the enemy if the health is less than or equal to 0
         if(health <= 0) {
             isDead = true;
+            UpdateScore(100);
             StartCoroutine(DeathAnimation());
         }
 
+    }
+
+    void UpdateScore(float val){
+        playerScore += val;
+        pauseMenuScript.scoreText.text = "Score: $" + (int)playerScore;
     }
 
     // Determines when the enemy should shoot at the player
@@ -106,4 +114,5 @@ private PauseMenu pauseMenuScript;
         // Destroy the enemy once the animation is finished
         Destroy(gameObject);
     }
+
 }

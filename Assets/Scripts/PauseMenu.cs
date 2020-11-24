@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject scoreMenu;
     private AudioSource [] allAudioSource;
     public PlayerController playerController;
+    public TextMeshProUGUI scoreText;
     // Start is called before the first frame update
     void Start()
     {
