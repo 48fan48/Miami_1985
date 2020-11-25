@@ -5,7 +5,8 @@ using UnityEngine;
 public class MoverForward : MonoBehaviour
 {
     public float speed = 40;
-    public float damage = 20;
+    public float enemyDamage = 20f;
+    public int playerDamage = 5;
     private Enemy enemyScript;
     private PlayerController playerScript;
     
@@ -31,17 +32,17 @@ public class MoverForward : MonoBehaviour
             // Get the enemy script
             enemyScript = other.gameObject.GetComponent<Enemy>();
             // Lower the enemy health
-            enemyScript.updateHealth(damage);
+            enemyScript.updateHealth(enemyDamage);
         }
 
         // If the bullet hits the player
-        if(other.gameObject.CompareTag("Player")){
+        if(other.gameObject.CompareTag("Player")) {
             // Destroy the bullet
             Destroy(gameObject);
             // Get the player controller script
             playerScript = other.gameObject.GetComponent<PlayerController>();
             // Decrease the player health by 5
-            playerScript.decreaseHealth(5);
+            playerScript.decreaseHealth(playerDamage);
         }
     }
 }

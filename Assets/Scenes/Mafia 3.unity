@@ -1917,7 +1917,7 @@ GameObject:
   - component: {fileID: 780106637}
   m_Layer: 0
   m_Name: Enemies
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2632,7 +2632,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3038504036661467098, guid: 9e1a1ef6770c2f6428adea178d679ea2,
     type: 3}
   health: 100
-  gameOverMenu: {fileID: 0}
+  gameOverMenu: {fileID: 1670706805}
   gameIsOver: 0
   pauseMenuScript: {fileID: 0}
 --- !u!95 &1253412487
