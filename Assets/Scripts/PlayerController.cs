@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public GameObject gameOverMenu;
     public bool gameIsOver = false;
     public PauseMenu pauseMenuScript;
+    //public GunController gun;
     
 
     // Start is called before the first frame update
@@ -98,6 +99,12 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(projectilePrefab, transform.position + new Vector3(-1f,1.7f,0), transform.rotation);
             gunShot.Play();
+            //gun.isFiring = true;
+        } 
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            //gun.isFiring = false;
         }
     }
 
