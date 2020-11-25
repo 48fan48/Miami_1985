@@ -1219,6 +1219,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1201308550}
     m_Modifications:
+    - target: {fileID: 1226811549, guid: 44d57cfa07de346458450744785d8a7e, type: 3}
+      propertyPath: fireRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3191221269692976073, guid: 44d57cfa07de346458450744785d8a7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1294,6 +1298,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1201308550}
     m_Modifications:
+    - target: {fileID: 1226811549, guid: 44d57cfa07de346458450744785d8a7e, type: 3}
+      propertyPath: fireRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3191221269692976073, guid: 44d57cfa07de346458450744785d8a7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2201,7 +2209,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910150193}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7e0c53fd458ee89468a09775fd871ded, type: 3}
@@ -2556,6 +2564,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1201308550}
     m_Modifications:
+    - target: {fileID: 1226811549, guid: 44d57cfa07de346458450744785d8a7e, type: 3}
+      propertyPath: fireRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3191221269692976073, guid: 44d57cfa07de346458450744785d8a7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2996,9 +3008,10 @@ MonoBehaviour:
   health: 100
   timeBtwShots: 0.25
   timeForDeath: 4
-  fireRadius: 25
+  fireRadius: 5
   force: 2000
   isDead: 0
+  playerInRange: 0
 --- !u!1 &1274985723
 GameObject:
   m_ObjectHideFlags: 0
@@ -3349,6 +3362,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1201308550}
     m_Modifications:
+    - target: {fileID: 1226811549, guid: 44d57cfa07de346458450744785d8a7e, type: 3}
+      propertyPath: fireRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3191221269692976073, guid: 44d57cfa07de346458450744785d8a7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3424,6 +3441,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1201308550}
     m_Modifications:
+    - target: {fileID: 1226811549, guid: 44d57cfa07de346458450744785d8a7e, type: 3}
+      propertyPath: fireRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3191221269692976073, guid: 44d57cfa07de346458450744785d8a7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3809,6 +3830,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1201308550}
     m_Modifications:
+    - target: {fileID: 1226811549, guid: 44d57cfa07de346458450744785d8a7e, type: 3}
+      propertyPath: fireRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3191221269692976073, guid: 44d57cfa07de346458450744785d8a7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4468,6 +4493,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1201308550}
     m_Modifications:
+    - target: {fileID: 1226811549, guid: 44d57cfa07de346458450744785d8a7e, type: 3}
+      propertyPath: fireRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3191221269692976073, guid: 44d57cfa07de346458450744785d8a7e,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -15,15 +15,17 @@ public GameObject projectilePrefab;
 public float health = 100f;
 public float timeBtwShots = 2f;
 public float timeForDeath = 4f;
-public float fireRadius = 5f;
+public float fireRadius = 5.0f;
 public float force = 2000f;
 public bool isDead = false;
+public bool playerInRange = false;
 
 private Animator animator;
 private AudioSource gunShot;
+private PauseMenu pauseMenuScript;
+private Patrol patrolScript;
 private float timerShots;
 private float timerDeath;
-private PauseMenu pauseMenuScript;
 private static float playerScore;
 
     // Start is called before the first frame update
@@ -31,13 +33,14 @@ private static float playerScore;
     {
         // Get the player object 
         player = GameObject.Find("Fidel");
-        playerScore = 0;
         // Get the animator
         animator = GetComponent<Animator>();
         // Get the gun shot audio source
         gunShot = GetComponent<AudioSource>();
         //Get the menu script from the object
         pauseMenuScript = GameObject.Find("Canvas").GetComponent<PauseMenu>();
+        // Set the player score to 0
+        playerScore = 0;
     }
 
     // Update is called once per frame
@@ -48,8 +51,13 @@ private static float playerScore;
         
         // If the player is within a certain range
         if(distance <= fireRadius &&  health > 0) {
+            playerInRange = true;
             ShootPlayer();
         } 
+        // The player is not within range
+        else {
+            playerInRange = false;
+        }
 
          // Destroy the enemy if the health is less than or equal to 0
         if(health <= 0) {
@@ -67,6 +75,9 @@ private static float playerScore;
     // Determines when the enemy should shoot at the player
     void ShootPlayer() 
     {
+        
+        transform.LookAt(player.transform);
+        
         RaycastHit hitPlayer;
         
         // Create a ray based on the player position
@@ -75,7 +86,6 @@ private static float playerScore;
         // If the player position is in range
         if(Physics.SphereCast(playerPos, 0.25f, out hitPlayer, fireRadius))
         {
-
             transform.LookAt(player.transform);
             // Used so the enemy can't spam bullets; creates a time between shots
             if (timerShots <= 0 && hitPlayer.transform.tag == "Player")
