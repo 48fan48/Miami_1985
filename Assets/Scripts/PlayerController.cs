@@ -114,6 +114,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void GameOver(){
+        // Start the death animation
+        animator.SetBool("Is Dead", true);
         gameOverMenu.SetActive(true);
         gameIsOver = true;
         Time.timeScale = 0f;
