@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MenuOptions : MonoBehaviour
 {
+    public GameObject statsMenu;
+    public TextMeshProUGUI statsText;
+    Scene scene;
     // Start is called before the first frame update
     void Start()
     {
-        
+        scene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -25,11 +29,22 @@ public class MenuOptions : MonoBehaviour
         }
 
         //Load the first Scene (Will be changed to load based on file input)
-        SceneManager.LoadScene("Mafia 1");
+        SceneManager.LoadScene(scene.buildIndex + 1);
     }
 
     //Quits the game when the player chooses the "Quit" menu item
     public void ExitGame(){
         Application.Quit();
+    }
+
+    public void LoadData(){
+        statsMenu.SetActive(true);
+        if(PlayerPrefs.HasKey("PlayerScoreString")){
+            string getStats = PlayerPrefs.GetString("PlayerScoreString");
+            statsText.text = "Scores\n" + getStats;
+        }else{
+            statsText.text = "Welcome New Player!";
+            statsText.alignment = TextAlignmentOptions.Top;
+        }
     }
 }

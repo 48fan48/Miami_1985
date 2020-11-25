@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-
+using System.IO;
+using System;
+using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public bool IsPaused;
@@ -14,6 +16,7 @@ public class PauseMenu : MonoBehaviour
     public PlayerController playerController;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;
+    private String saveStats;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,4 +70,21 @@ public class PauseMenu : MonoBehaviour
     public void quit(){
         Application.Quit();
     }
+
+    public void SaveGame(){
+        PlayerPrefs.SetString("PlayerScore", scoreText.text);
+        PlayerPrefs.SetInt("PlayerLevel", SceneManager.GetActiveScene().buildIndex);
+        saveStats = "Last Score: " + scoreText.text + ", Level: " + SceneManager.GetActiveScene().buildIndex;
+
+        if(PlayerPrefs.HasKey("PlayerScore")){
+            string oldStats = PlayerPrefs.GetString("PlayerScoreString");
+            saveStats = saveStats + "\n" + oldStats;
+            PlayerPrefs.SetString("PlayerScoreString", saveStats);
+        }else{
+            PlayerPrefs.SetString("PlayerScoreString", saveStats);
+        }
+        PlayerPrefs.Save();
+    }
+
+    
 }
