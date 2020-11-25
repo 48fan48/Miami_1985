@@ -20,6 +20,11 @@ public class MoverForward : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
+        if(transform.position.x < -50 || transform.position.x > 50 || transform.position.y < -50 || transform.position.y > 50)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // When the bullet collides with the enemy
