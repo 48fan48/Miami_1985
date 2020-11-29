@@ -30,7 +30,6 @@ public class PauseMenu : MonoBehaviour
     {
         //List of all the enemies within the scene
         enemyArr = GameObject.FindGameObjectsWithTag("Enemy");
-
         //If the escape button is pressed, pause the game until the user unpauses or quit
         if(Input.GetKeyDown(KeyCode.Escape)){
             if(IsPaused){
@@ -55,7 +54,9 @@ public class PauseMenu : MonoBehaviour
             pauseMenu.SetActive(true);
             //Stop all audio sources
             foreach(AudioSource audio in allAudioSource){
-                audio.Stop();
+                if(audio != null){
+                     audio.Stop();
+                }
             }
             //Stop all movement
             Time.timeScale = 0f;
@@ -68,7 +69,9 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         //Start all audio sources
         foreach(AudioSource audio in allAudioSource){
-            audio.Play();
+            if(audio != null){
+                audio.Play();
+            }
         }
         //Start all movement
         Time.timeScale = 1f;

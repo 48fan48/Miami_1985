@@ -3561,6 +3561,8 @@ MonoBehaviour:
   timeForDeath: 4
   fireRadius: 25
   force: 2000
+  isDead: 0
+  playerInRange: 0
 --- !u!95 &583145702
 Animator:
   serializedVersion: 3
