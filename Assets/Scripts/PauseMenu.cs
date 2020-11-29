@@ -121,8 +121,10 @@ public class PauseMenu : MonoBehaviour
             quit();
         }else{//If there are still more levels, go to the next one
             Time.timeScale = 1f;
-            completionMenu.SetActive(false);  
+            completionMenu.SetActive(false); 
+            //Add 1000 to the score when the user proceeds to the next level 
             enemyScript.UpdateScore(1000); 
+            //Load the next scene in the build index list
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
