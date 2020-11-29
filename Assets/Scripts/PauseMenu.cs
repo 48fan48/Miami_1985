@@ -86,5 +86,14 @@ public class PauseMenu : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void NextLevel(){
+        //If the scene is the last level, then end the game
+        if(SceneManager.GetActiveScene().buildIndex >= 3){
+            quit();
+        }else{//If there are still more levels, go to the next one
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
+
     
 }
