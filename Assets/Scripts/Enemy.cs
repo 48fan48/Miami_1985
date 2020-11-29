@@ -40,7 +40,7 @@ private static float playerScore;
         //Get the menu script from the object
         pauseMenuScript = GameObject.Find("Canvas").GetComponent<PauseMenu>();
         //Call this to update score on new scene for completing the previous level
-        UpdateScore(1000);
+        UpdateScore(0);
     }
 
     // Update is called once per frame
@@ -67,7 +67,7 @@ private static float playerScore;
 
     }
     //Update the score with the specified value
-    void UpdateScore(float val){
+    public void UpdateScore(float val){
         playerScore += val;
         pauseMenuScript.scoreText.text = "Score: $" + (int)playerScore;
     }
@@ -126,7 +126,6 @@ private static float playerScore;
         pauseMenuScript.decreaseNumEnemies();
         // Destroy the enemy once the animation is finished
         Destroy(gameObject);
-        
     }
 
 }

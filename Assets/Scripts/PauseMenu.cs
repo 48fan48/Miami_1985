@@ -20,9 +20,11 @@ public class PauseMenu : MonoBehaviour
     private String saveStats;
     public GameObject completionMenu;
     public int numEnemies;
+    public Enemy enemyScript;
     // Start is called before the first frame update
     void Start()
     {
+        enemyScript = GameObject.Find("Enemy").GetComponent<Enemy>();
         allAudioSource = FindObjectsOfType<AudioSource>();
         enemyArr = GameObject.FindGameObjectsWithTag("Enemy");
         numEnemies = enemyArr.Length - 1;
@@ -119,13 +121,9 @@ public class PauseMenu : MonoBehaviour
             quit();
         }else{//If there are still more levels, go to the next one
             Time.timeScale = 1f;
-            completionMenu.SetActive(false);   
+            completionMenu.SetActive(false);  
+            enemyScript.UpdateScore(1000); 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            /*foreach(AudioSource audio in allAudioSource){
-                if(audio != null){
-                    audio.Play();
-                }
-            }*/
         }
     }
     
