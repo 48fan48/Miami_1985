@@ -66,7 +66,7 @@ private static float playerScore;
         }
 
     }
-
+    //Update the score with the specified value
     void UpdateScore(float val){
         playerScore += val;
         pauseMenuScript.scoreText.text = "Score: $" + (int)playerScore;

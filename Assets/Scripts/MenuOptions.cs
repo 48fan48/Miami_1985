@@ -37,6 +37,7 @@ public class MenuOptions : MonoBehaviour
         Application.Quit();
     }
 
+    //Loads the data from the playerprefs information
     public void LoadData(){
         statsMenu.SetActive(true);
         if(PlayerPrefs.HasKey("PlayerScoreString")){

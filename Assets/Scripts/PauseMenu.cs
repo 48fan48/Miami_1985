@@ -23,12 +23,15 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         allAudioSource = FindObjectsOfType<AudioSource>();
-        enemyArr = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     // Update is called once per frame
     void Update()
     {
+        //List of all the enemies within the scene
+        enemyArr = GameObject.FindGameObjectsWithTag("Enemy");
+
+        //If the escape button is pressed, pause the game until the user unpauses or quit
         if(Input.GetKeyDown(KeyCode.Escape)){
             if(IsPaused){
                 Resume();
@@ -72,14 +75,17 @@ public class PauseMenu : MonoBehaviour
         IsPaused = false;
     }
 
+    //Go back to the menu from the pause menu, timeScale is still set to zero
     public void goToMenu(){
         SceneManager.LoadScene("Menu");
     }
 
+    //Quit the game
     public void quit(){
         Application.Quit();
     }
 
+    //Save the game information
     public void SaveGame(){
         PlayerPrefs.SetString("PlayerScore", scoreText.text);
         PlayerPrefs.SetInt("PlayerLevel", SceneManager.GetActiveScene().buildIndex);
@@ -95,6 +101,7 @@ public class PauseMenu : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    //Proceed to the next level
     public void NextLevel(){
         //If the scene is the last level, then end the game
         if(SceneManager.GetActiveScene().buildIndex >= 3){
