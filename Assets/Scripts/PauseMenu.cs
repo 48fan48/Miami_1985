@@ -26,6 +26,7 @@ public class PauseMenu : MonoBehaviour
         allAudioSource = FindObjectsOfType<AudioSource>();
         enemyArr = GameObject.FindGameObjectsWithTag("Enemy");
         numEnemies = enemyArr.Length - 1;
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -43,7 +44,7 @@ public class PauseMenu : MonoBehaviour
 
         //Once there are zero enemmies left, display the completion menu
         if(numEnemies <= 0){
-            //Time.timeScale = 0f;
+            Time.timeScale = 0f;
             completionMenu.SetActive(true);
         }
     }
