@@ -114,6 +114,7 @@ public class PauseMenu : MonoBehaviour
         }else{//If there are still more levels, go to the next one
             completionMenu.SetActive(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Time.timeScale = 1f;
             WaitForSceneLoad();
         }
     }
@@ -126,6 +127,5 @@ public class PauseMenu : MonoBehaviour
 
     private IEnumerator WaitForSceneLoad(){
         yield return new WaitForSeconds(4.5f);
-        Time.timeScale = 1f;
     }
 }
