@@ -19,17 +19,19 @@ public class PauseMenu : MonoBehaviour
     public TextMeshProUGUI healthText;
     private String saveStats;
     public GameObject completionMenu;
+    public int numEnemies;
     // Start is called before the first frame update
     void Start()
     {
         allAudioSource = FindObjectsOfType<AudioSource>();
+        enemyArr = GameObject.FindGameObjectsWithTag("Enemy");
+        numEnemies = enemyArr.Length - 1;
     }
 
     // Update is called once per frame
     void Update()
     {
         //List of all the enemies within the scene
-        enemyArr = GameObject.FindGameObjectsWithTag("Enemy");
         //If the escape button is pressed, pause the game until the user unpauses or quit
         if(Input.GetKeyDown(KeyCode.Escape)){
             if(IsPaused){
@@ -40,7 +42,7 @@ public class PauseMenu : MonoBehaviour
         }
 
         //Once there are zero enemmies left, display the completion menu
-        if(enemyArr.Length <= 0){
+        if(numEnemies <= 0){
             completionMenu.SetActive(true);
             Time.timeScale = 0f;
         }
@@ -110,10 +112,20 @@ public class PauseMenu : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex >= 3){
             quit();
         }else{//If there are still more levels, go to the next one
-            Time.timeScale = 1f;
+            completionMenu.SetActive(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            WaitForSceneLoad();
         }
     }
-
     
+    //Decrease number of enemies
+    public void decreaseNumEnemies(){
+        numEnemies--;
+        Debug.Log("Num enemies: " + numEnemies);
+    }
+
+    private IEnumerator WaitForSceneLoad(){
+        yield return new WaitForSeconds(4.5f);
+        Time.timeScale = 1f;
+    }
 }

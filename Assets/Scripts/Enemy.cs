@@ -122,6 +122,8 @@ private static float playerScore;
         yield return new WaitForSeconds(4.3f);
         //Update the score after the enemy has died
         UpdateScore(100);
+        //Decrease the number of enemies
+        pauseMenuScript.decreaseNumEnemies();
         // Destroy the enemy once the animation is finished
         Destroy(gameObject);
         

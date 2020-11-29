@@ -3736,6 +3736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7625e11a21b31a543abae2aa6d909a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyArr: []
   IsPaused: 0
   pauseMenu: {fileID: 140241721}
   gameOverMenu: {fileID: 627052481}
@@ -3744,6 +3745,7 @@ MonoBehaviour:
   scoreText: {fileID: 540853361}
   healthText: {fileID: 968288702}
   completionMenu: {fileID: 1698008247}
+  numEnemies: 0
 --- !u!114 &977232768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4889,7 +4891,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 977232767}
         m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
@@ -5721,7 +5723,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 977232767}
         m_MethodName: quit
         m_Mode: 1
         m_Arguments:
