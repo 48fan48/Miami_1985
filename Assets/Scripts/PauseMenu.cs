@@ -46,6 +46,11 @@ public class PauseMenu : MonoBehaviour
         if(numEnemies <= 0){
             Time.timeScale = 0f;
             completionMenu.SetActive(true);
+            foreach(AudioSource audio in allAudioSource){
+            if(audio != null){
+                audio.Stop();
+            }
+        }
         }
     }
 
@@ -114,8 +119,13 @@ public class PauseMenu : MonoBehaviour
             quit();
         }else{//If there are still more levels, go to the next one
             Time.timeScale = 1f;
-            completionMenu.SetActive(false);
+            completionMenu.SetActive(false);   
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            /*foreach(AudioSource audio in allAudioSource){
+                if(audio != null){
+                    audio.Play();
+                }
+            }*/
         }
     }
     

@@ -39,8 +39,8 @@ private static float playerScore;
         gunShot = GetComponent<AudioSource>();
         //Get the menu script from the object
         pauseMenuScript = GameObject.Find("Canvas").GetComponent<PauseMenu>();
-        // Set the player score to 0
-        playerScore = 0;
+        //Call this to update score on new scene
+        UpdateScore(0);
     }
 
     // Update is called once per frame
