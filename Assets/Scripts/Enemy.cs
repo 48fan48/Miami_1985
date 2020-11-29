@@ -19,6 +19,7 @@ public float fireRadius = 5.0f;
 public float force = 2000f;
 public bool isDead = false;
 public bool playerInRange = false;
+public GunController gun;
 
 private Animator animator;
 private AudioSource gunShot;
@@ -88,19 +89,19 @@ private static float playerScore;
         {
             transform.LookAt(player.transform);
             // Used so the enemy can't spam bullets; creates a time between shots
-            if (timerShots <= 0 && hitPlayer.transform.tag == "Player")
+            if (/*timerShots <= 0 &&*/ hitPlayer.transform.tag == "Player")
             {
-                // Create the bullet
-                Instantiate(projectilePrefab, transform.position + new Vector3(1,1.7f,0), transform.rotation);
+                gun.isFiring = true;
                 // Play the gun shot
                 gunShot.Play();
                 // Set the timer 
-                timerShots = timeBtwShots;
+                //timerShots = timeBtwShots;
             }
             else 
             {
+                gun.isFiring = false;
                 // Decrease the time between shots
-                timerShots -= Time.deltaTime;
+                // timerShots -= Time.deltaTime;
             }
         }
     } 

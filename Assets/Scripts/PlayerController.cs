@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput;
     public float verticalInput;
     public float speed = 3;
-    public GameObject projectilePrefab;
+    //public GameObject projectilePrefab;
     private Animator animator;
     private Camera mainCamera;
     private AudioSource gunShot;
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public GameObject gameOverMenu;
     public bool gameIsOver = false;
     public PauseMenu pauseMenuScript;
-    //public GunController gun;
+    public GunController gun;
     
 
     // Start is called before the first frame update
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
 
         altMove();
-        shoot();
+        //shoot();
 
         Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
@@ -54,75 +54,67 @@ public class PlayerController : MonoBehaviour
 
     public void altMove()
     {
-        //D moves the player to the right
+
         if (Input.GetKey(KeyCode.D)) 
         {
             transform.position += Vector3.forward * speed * Time.deltaTime;
             animator.SetBool("Move Right", true);
         } 
-        //If the player lifts the D key, stop the animation
         if (Input.GetKeyUp(KeyCode.D)) 
         {
             animator.SetBool("Move Right", false);
         }
-        //A moves the player to the left
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.back* speed * Time.deltaTime;
             animator.SetBool("Move Left", true);
         } 
-        //If the player lifts the A key, stop the animation
         if (Input.GetKeyUp(KeyCode.A))
         {
             animator.SetBool("Move Left", false);
         }
-        //W moves the player forward
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
             animator.SetBool("Move Forward", true);
         }
-        //If the player lifts the w key, stop the animation
         if (Input.GetKeyUp(KeyCode.W)) 
         {
             animator.SetBool("Move Forward", false);
         }
-        //S moves the player backwards
         if (Input.GetKey(KeyCode.S))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
             animator.SetBool("Move Backwards", true);
         }
-        //If the player lifts the S key, stop the animation
         if (Input.GetKeyUp(KeyCode.S)) 
         {
             animator.SetBool("Move Backwards", false);
         }
-    }
-
-    public void shoot()
-    {   
-        //If the player clicks the left button and the game is not paused, create a bullet and shoot towards enemy
         if (Input.GetMouseButtonDown(0) && Time.deltaTime != 0)
         {
-            Instantiate(projectilePrefab, transform.position + new Vector3(-1f,1.7f,0), transform.rotation);
-            gunShot.Play();
-            //gun.isFiring = true;
-        } 
-
+            gun.isFiring = true;
+            // Instantiate(projectilePrefab, transform.position + new Vector3(-1f,1.7f,0), transform.rotation);
+            // gunShot.Play();
+            // gun.isFiring = true;
+        }
         if (Input.GetMouseButtonUp(0))
         {
-            //gun.isFiring = false;
+            gun.isFiring = false;
         }
     }
 
-    //Decrease the player's health by the specified value and update the UI text
+    /* public void Shoot()
+    {
+        gun.isFiring = true;
+        gunShot.Play();
+    } */
+
     public void decreaseHealth(int healthDecrease){
         health -= healthDecrease;
         pauseMenuScript.healthText.text = "Health: " + health;
     }
 
-    //Once the player dies, the game is over
     public void GameOver(){
         // Start the death animation
         animator.SetBool("Is Dead", true);

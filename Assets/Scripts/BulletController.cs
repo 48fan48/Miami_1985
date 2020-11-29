@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoverForward : MonoBehaviour
+public class BulletController : MonoBehaviour
 {
-    public float speed = 40;
+    public float speed;
     public float enemyDamage = 20f;
     public int playerDamage = 5;
     private Enemy enemyScript;
@@ -21,10 +21,10 @@ public class MoverForward : MonoBehaviour
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
-        if(transform.position.x < -50 || transform.position.x > 50 || transform.position.y < -50 || transform.position.y > 50)
+        /* if(transform.position.x < -50 || transform.position.x > 50 || transform.position.y < -50 || transform.position.y > 50)
         {
             Destroy(gameObject);
-        }
+        } */
     }
 
     // When the bullet collides with the enemy
@@ -48,6 +48,6 @@ public class MoverForward : MonoBehaviour
             playerScript = other.gameObject.GetComponent<PlayerController>();
             // Decrease the player health by 5
             playerScript.decreaseHealth(playerDamage);
-        }
+        } 
     }
 }
