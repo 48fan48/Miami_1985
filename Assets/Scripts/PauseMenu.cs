@@ -24,7 +24,14 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyScript = GameObject.Find("Enemy (Mafia 1)").GetComponent<Enemy>();
+        if(SceneManager.GetActiveScene().buildIndex == 1){
+            enemyScript = GameObject.Find("Enemy (Mafia 1)").GetComponent<Enemy>();
+        }else if(SceneManager.GetActiveScene().buildIndex == 2){//This is temporary while we wait on John's level
+            enemyScript = GameObject.Find("Enemy (Mafia 3)").GetComponent<Enemy>();
+        }else{
+            enemyScript = GameObject.Find("Enemy (Mafia 3)").GetComponent<Enemy>();
+        }
+        
         allAudioSource = FindObjectsOfType<AudioSource>();
         enemyArr = GameObject.FindGameObjectsWithTag("Enemy");
         numEnemies = enemyArr.Length - 1;
