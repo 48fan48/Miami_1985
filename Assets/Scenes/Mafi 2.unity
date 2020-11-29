@@ -7013,6 +7013,7 @@ MonoBehaviour:
   healthText: {fileID: 923341758}
   completionMenu: {fileID: 1474369319}
   numEnemies: 0
+  enemyScript: {fileID: 0}
 --- !u!114 &1607866477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7946,6 +7947,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pic frame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053997284219376783, guid: 5ffe9995a95aac74489b55607d4b5f95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2754570113248013206, guid: 5ffe9995a95aac74489b55607d4b5f95,
         type: 3}
