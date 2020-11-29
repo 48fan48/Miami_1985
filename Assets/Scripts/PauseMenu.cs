@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyScript = GameObject.Find("Enemy").GetComponent<Enemy>();
+        enemyScript = GameObject.Find("Enemy (Mafia 1)").GetComponent<Enemy>();
         allAudioSource = FindObjectsOfType<AudioSource>();
         enemyArr = GameObject.FindGameObjectsWithTag("Enemy");
         numEnemies = enemyArr.Length - 1;
