@@ -8,6 +8,7 @@ using System;
 using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject [] enemyArr;
     public bool IsPaused;
     public GameObject pauseMenu;
     public GameObject gameOverMenu;
@@ -22,7 +23,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         allAudioSource = FindObjectsOfType<AudioSource>();
-        //enemies = GameObject.Find
+        enemyArr = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -34,6 +35,12 @@ public class PauseMenu : MonoBehaviour
             }else{
                 Pause();
             }
+        }
+
+        //Once there are zero enemmies left, display the completion menu
+        if(enemyArr.Length <= 0){
+            completionMenu.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 
@@ -93,6 +100,7 @@ public class PauseMenu : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex >= 3){
             quit();
         }else{//If there are still more levels, go to the next one
+            Time.timeScale = 1f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
