@@ -43,8 +43,8 @@ public class PauseMenu : MonoBehaviour
 
         //Once there are zero enemmies left, display the completion menu
         if(numEnemies <= 0){
+            //Time.timeScale = 0f;
             completionMenu.SetActive(true);
-            Time.timeScale = 0f;
         }
     }
 
@@ -112,8 +112,8 @@ public class PauseMenu : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex >= 3){
             quit();
         }else{//If there are still more levels, go to the next one
-            completionMenu.SetActive(false);
             Time.timeScale = 1f;
+            completionMenu.SetActive(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

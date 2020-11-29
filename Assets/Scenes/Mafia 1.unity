@@ -6734,6 +6734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7625e11a21b31a543abae2aa6d909a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyArr: []
   IsPaused: 0
   pauseMenu: {fileID: 2016282152}
   gameOverMenu: {fileID: 363088883}
@@ -6742,6 +6743,7 @@ MonoBehaviour:
   scoreText: {fileID: 1562016281}
   healthText: {fileID: 1038516855}
   completionMenu: {fileID: 1300031185}
+  numEnemies: 0
 --- !u!1 &2117292404 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3191221269693405097, guid: 44d57cfa07de346458450744785d8a7e,
