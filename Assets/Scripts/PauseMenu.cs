@@ -17,10 +17,12 @@ public class PauseMenu : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;
     private String saveStats;
+    public GameObject completionMenu;
     // Start is called before the first frame update
     void Start()
     {
         allAudioSource = FindObjectsOfType<AudioSource>();
+        //enemies = GameObject.Find
     }
 
     // Update is called once per frame

@@ -7582,6 +7582,7 @@ MonoBehaviour:
   playerController: {fileID: 1253412486}
   scoreText: {fileID: 660758474}
   healthText: {fileID: 58654664}
+  completionMenu: {fileID: 578231878}
 --- !u!114 &1542582827
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6741,6 +6741,7 @@ MonoBehaviour:
   playerController: {fileID: 400949683}
   scoreText: {fileID: 1562016281}
   healthText: {fileID: 1038516855}
+  completionMenu: {fileID: 1300031185}
 --- !u!1 &2117292404 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3191221269693405097, guid: 44d57cfa07de346458450744785d8a7e,
