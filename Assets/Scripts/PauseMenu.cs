@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
         //Assign the enemy script variable to the enemy.cs script from the enemies
         if (SceneManager.GetActiveScene().buildIndex == 1){
             enemyScript = GameObject.Find("Enemy (Mafia 1)").GetComponent<Enemy>();
-        }else if (SceneManager.GetActiveScene().buildIndex == 2){
+        }else if (SceneManager.GetActiveScene().buildIndex == 3){
             enemyScript = GameObject.Find("Enemy (Mafia 2)").GetComponent<Enemy>();
         }else {
             enemyScript = GameObject.Find("Enemy (Mafia 3)").GetComponent<Enemy>();
