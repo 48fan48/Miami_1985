@@ -94,21 +94,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Time.deltaTime != 0)
         {
             gun.isFiring = true;
-            // Instantiate(projectilePrefab, transform.position + new Vector3(-1f,1.7f,0), transform.rotation);
-            // gunShot.Play();
-            // gun.isFiring = true;
+            gunShot.Play();
         }
         if (Input.GetMouseButtonUp(0))
         {
             gun.isFiring = false;
         }
     }
-
-    /* public void Shoot()
-    {
-        gun.isFiring = true;
-        gunShot.Play();
-    } */
 
     public void decreaseHealth(int healthDecrease){
         health -= healthDecrease;

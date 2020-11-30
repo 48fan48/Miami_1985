@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
     public PlayerController playerController;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;
+    public TextMeshProUGUI ammoText;
     private String saveStats;
     public GameObject completionMenu;
     public int numEnemies;

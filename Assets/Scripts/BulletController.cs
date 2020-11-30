@@ -20,18 +20,13 @@ public class BulletController : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
-
-        /* if(transform.position.x < -50 || transform.position.x > 50 || transform.position.y < -50 || transform.position.y > 50)
-        {
-            Destroy(gameObject);
-        } */
     }
 
     // When the bullet collides with the enemy
     void OnTriggerEnter(Collider other)
     {
         // If the bullet hits an enemy
-        if(other.gameObject.CompareTag("Enemy")){
+        if(other.gameObject.CompareTag("Enemy")) {
             // Destroy the bullet
             Destroy(gameObject);
             // Get the enemy script
