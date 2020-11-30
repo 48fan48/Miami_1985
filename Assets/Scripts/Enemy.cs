@@ -91,6 +91,8 @@ private static float playerScore;
             // Used so the enemy can't spam bullets; creates a time between shots
             if (/*timerShots <= 0 &&*/ hitPlayer.transform.tag == "Player")
             {
+                animator.SetBool("isShooting", true);
+                animator.SetBool("WalkingForward", false);
                 gun.isFiring = true;
                 // Play the gun shot
                 gunShot.Play();
