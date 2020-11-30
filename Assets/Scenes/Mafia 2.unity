@@ -3239,8 +3239,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4548667774195712142, guid: 63f2b640e94c80049b9ab863fcd698b9,
+        type: 3}
+      propertyPath: gameOverMenu
+      value: 
+      objectReference: {fileID: 377926569}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63f2b640e94c80049b9ab863fcd698b9, type: 3}
+--- !u!114 &564188210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4548667774195712142, guid: 63f2b640e94c80049b9ab863fcd698b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 564188209}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073557437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b610d2ec5a9d21447a2b06b01a82aaf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &578318334
 GameObject:
   m_ObjectHideFlags: 0
@@ -7807,7 +7824,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 1252942064}
   gameOverMenu: {fileID: 377926569}
   scoreMenu: {fileID: 1632334764}
-  playerController: {fileID: 0}
+  playerController: {fileID: 564188210}
   scoreText: {fileID: 1680434429}
   healthText: {fileID: 923341758}
   completionMenu: {fileID: 1474369319}
