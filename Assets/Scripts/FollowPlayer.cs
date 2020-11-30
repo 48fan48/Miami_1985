@@ -5,11 +5,11 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
-    private Vector3 offset;
+    public Vector3 offset;
     // Start is called before the first frame update
     void Start()
     {
-        offset = new Vector3(0, 50, 0);
+        offset = new Vector3(0, 20, 0);
     }
 
     // Update is called once per frame
