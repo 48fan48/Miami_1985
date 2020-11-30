@@ -56,11 +56,13 @@ public class PauseMenu : MonoBehaviour
         if(numEnemies <= 0){
             Time.timeScale = 0f;
             completionMenu.SetActive(true);
-            /*foreach(AudioSource audio in allAudioSource){
-                if(audio != null){
-                    audio.Stop();
+            if(allAudioSource != null){
+                foreach(AudioSource audio in allAudioSource){
+                    if(audio != null){
+                        audio.Stop();
+                    }
                 }
-            }*/
+            }
         }
     }
 
