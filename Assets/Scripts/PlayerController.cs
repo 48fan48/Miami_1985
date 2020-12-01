@@ -4,26 +4,29 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject gameOverMenu;
+    public PauseMenu pauseMenuScript;
+    public GunController gun;
     public float horizontalInput;
     public float verticalInput;
     public float speed = 3;
-    //public GameObject projectilePrefab;
+    public float health = 100f;
+    public bool gameIsOver = false;
+    
     private Animator animator;
     private Camera mainCamera;
     private AudioSource gunShot;
-    public float health = 100f;
-    public GameObject gameOverMenu;
-    public bool gameIsOver = false;
-    public PauseMenu pauseMenuScript;
-    public GunController gun;
-    
 
     // Start is called before the first frame update
     void Start()
     {
+        // Get the player animator
         animator = GetComponent<Animator>();
+        // Get the main camera
         mainCamera = FindObjectOfType<Camera>();
+        // Get the gunshot audio
         gunShot = GetComponent<AudioSource>();
+        // Get the Pause Menu script
         pauseMenuScript = GameObject.Find("Canvas").GetComponent<PauseMenu>();
     }
 
@@ -31,28 +34,18 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        altMove();
-        //shoot();
-
-        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-        float rayLength;
-
-        if(Time.deltaTime != 0){
-            if(groundPlane.Raycast(cameraRay , out rayLength))
-            {
-                Vector3 lookPoint = cameraRay.GetPoint(rayLength);
-                Debug.DrawLine(cameraRay.origin, lookPoint, Color.blue);
-                transform.LookAt(new Vector3(lookPoint.x, transform.position.y, lookPoint.z));
-            }
-        }
-
+        // Used for player movement 
+        AltMove();
+        LookAtMouse();
+        
+        // Check the health, if it is less than zero end the game
         if(health <= 0){
             GameOver();
         }
     }
 
-    public void altMove()
+    // Player movement
+    public void AltMove()
     {
 
         if (Input.GetKey(KeyCode.D)) 
@@ -102,23 +95,51 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void decreaseHealth(int healthDecrease){
+    // Decrease the player health
+    public void decreaseHealth(int healthDecrease)
+    {
         health -= healthDecrease;
+        // Display the player health
         pauseMenuScript.healthText.text = "Health: " + health;
     }
 
+    // Increase the player health
     public void increaseHealth()
     {
         health = 100;
+        // Display the player health
         pauseMenuScript.healthText.text = "Health: " + health;
     }
 
-    public void GameOver(){
+    public void GameOver()
+    {
         // Start the death animation
         animator.SetBool("Is Dead", true);
+        // Display the game over screen
         gameOverMenu.SetActive(true);
+        // Set the game over to true
         gameIsOver = true;
+        // Pause the game
         Time.timeScale = 0f;
+    }
+
+    public void LookAtMouse()
+    {
+        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        float rayLength;
+
+        // If the game is not paused
+        if(Time.deltaTime != 0)
+        {
+            if(groundPlane.Raycast(cameraRay , out rayLength))
+            {
+                Vector3 lookPoint = cameraRay.GetPoint(rayLength);
+                Debug.DrawLine(cameraRay.origin, lookPoint, Color.blue);
+                transform.LookAt(new Vector3(lookPoint.x, transform.position.y, lookPoint.z));
+            }
+        }
+
     }
 
 }

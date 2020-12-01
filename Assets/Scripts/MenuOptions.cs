@@ -9,6 +9,7 @@ public class MenuOptions : MonoBehaviour
     public GameObject statsMenu;
     public TextMeshProUGUI statsText;
     Scene scene;
+    
     // Start is called before the first frame update
     void Start()
     {

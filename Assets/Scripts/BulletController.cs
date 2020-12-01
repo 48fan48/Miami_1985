@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Unity Top Down Shooter #2 - Guns by gamesplusjames on youtube
+ * https://www.youtube.com/watch?v=JVibUZugFAQ
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +12,7 @@ public class BulletController : MonoBehaviour
     public float speed;
     public float enemyDamage = 20f;
     public int playerDamage = 5;
+    
     private Enemy enemyScript;
     private PlayerController playerScript;
     

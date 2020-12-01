@@ -15,7 +15,6 @@ public class Patrol : MonoBehaviour
     private float distance;
     private bool isWalking = true;
 
-
     // Start is called before the first frame update
     void Start()
     {

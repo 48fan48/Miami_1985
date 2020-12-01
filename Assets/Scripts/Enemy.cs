@@ -1,6 +1,5 @@
 ﻿/*
  * Unity AI shooting the Player // Top Down 3D Tutorial Beginner 05 by L_Sin Gularity
- * Logan Bland, John Clay, Jalen Wayt
 */
 
 using System.Collections;
@@ -12,6 +11,7 @@ public class Enemy : MonoBehaviour
 
 public GameObject player;
 public GameObject projectilePrefab;
+public GunController gun;
 public float health = 100f;
 public float timeBtwShots = 2f;
 public float timeForDeath = 4f;
@@ -19,7 +19,6 @@ public float fireRadius = 5.0f;
 public float force = 2000f;
 public bool isDead = false;
 public bool playerInRange = false;
-public GunController gun;
 
 private Animator animator;
 private AudioSource gunShot;
@@ -68,8 +67,11 @@ private static float playerScore;
 
     }
     //Update the score with the specified value
-    public void UpdateScore(float val){
+    public void UpdateScore(float val)
+    {
+        // Increase the player score
         playerScore += val;
+        // Display the player score
         pauseMenuScript.scoreText.text = "Score: $" + (int)playerScore;
     }
 
@@ -77,6 +79,7 @@ private static float playerScore;
     void ShootPlayer() 
     {
         
+        // Look at the player
         transform.LookAt(player.transform);
         
         RaycastHit hitPlayer;
@@ -89,21 +92,20 @@ private static float playerScore;
         {
             transform.LookAt(player.transform);
             // Used so the enemy can't spam bullets; creates a time between shots
-            if (/*timerShots <= 0 &&*/ hitPlayer.transform.tag == "Player")
+            if (hitPlayer.transform.tag == "Player")
             {
+                // Set the shooting animation to true
                 animator.SetBool("isShooting", true);
+                // Stop the walking animation
                 animator.SetBool("WalkingForward", false);
+                // Set the gun script's variable is firing to true
                 gun.isFiring = true;
                 // Play the gun shot
                 gunShot.Play();
-                // Set the timer 
-                //timerShots = timeBtwShots;
             }
             else 
             {
                 gun.isFiring = false;
-                // Decrease the time between shots
-                // timerShots -= Time.deltaTime;
             }
         }
     } 

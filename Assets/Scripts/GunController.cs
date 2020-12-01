@@ -44,6 +44,7 @@ public class GunController : MonoBehaviour
         }
     }
 
+    // Add ammo 
     public void AddAmmo()
     {
         ammoAmount += 20;

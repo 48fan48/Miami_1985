@@ -13,15 +13,17 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject gameOverMenu;
     public GameObject scoreMenu;
-    private AudioSource [] allAudioSource;
     public PlayerController playerController;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI ammoText;
-    private String saveStats;
     public GameObject completionMenu;
     public int numEnemies;
     public Enemy enemyScript;
+
+    private AudioSource [] allAudioSource;
+    private String saveStats;
+    
     // Start is called before the first frame update
     void Start()
     {
