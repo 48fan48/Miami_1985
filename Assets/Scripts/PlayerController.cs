@@ -107,6 +107,12 @@ public class PlayerController : MonoBehaviour
         pauseMenuScript.healthText.text = "Health: " + health;
     }
 
+    public void increaseHealth()
+    {
+        health = 100;
+        pauseMenuScript.healthText.text = "Health: " + health;
+    }
+
     public void GameOver(){
         // Start the death animation
         animator.SetBool("Is Dead", true);
