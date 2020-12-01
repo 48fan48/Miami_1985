@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     
     private Animator animator;
     private Camera mainCamera;
-    private AudioSource gunShot;
+    // private AudioSource gunShot;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         // Get the main camera
         mainCamera = FindObjectOfType<Camera>();
         // Get the gunshot audio
-        gunShot = GetComponent<AudioSource>();
+        // gunShot = GetComponent<AudioSource>();
         // Get the Pause Menu script
         pauseMenuScript = GameObject.Find("Canvas").GetComponent<PauseMenu>();
     }
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Time.deltaTime != 0)
         {
             gun.isFiring = true;
-            gunShot.Play();
+            // gunShot.Play();
         }
         if (Input.GetMouseButtonUp(0))
         {

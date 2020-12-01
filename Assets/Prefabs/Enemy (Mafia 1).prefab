@@ -1461,6 +1461,7 @@ MonoBehaviour:
   player: {fileID: 0}
   projectilePrefab: {fileID: 3038504036661467098, guid: 9e1a1ef6770c2f6428adea178d679ea2,
     type: 3}
+  gun: {fileID: 7916178290863559199}
   health: 100
   timeBtwShots: 1
   timeForDeath: 4
@@ -1468,7 +1469,6 @@ MonoBehaviour:
   force: 2000
   isDead: 0
   playerInRange: 0
-  gun: {fileID: 7916178290863559199}
 --- !u!95 &7916178290579482924
 Animator:
   serializedVersion: 3
@@ -2592,7 +2592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32781e4fd00ecdb45aaedcb9d5eda22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4917344051228646240, guid: 02bfaee5339ea3646a16c4463369da1e, type: 3}
+  bullet: {fileID: 114623218345261144, guid: 9e1a1ef6770c2f6428adea178d679ea2, type: 3}
   firePoint: {fileID: 7916178291440532386}
   isFiring: 0
   bulletSpeed: 40

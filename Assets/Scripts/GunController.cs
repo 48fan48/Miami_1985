@@ -13,6 +13,7 @@ public class GunController : MonoBehaviour
 
     private float shotCounter;
     private PauseMenu pauseMenuScript;
+    private AudioSource gunShot;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class GunController : MonoBehaviour
         shotCounter = 0;
         //Get the menu script from the object
         pauseMenuScript = GameObject.Find("Canvas").GetComponent<PauseMenu>();
+        // Get the gunshot audio
+        gunShot = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +40,8 @@ public class GunController : MonoBehaviour
             }
             // Create the bullet as a BulletController
             BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as BulletController;
+            // Play the gunshot sound
+            gunShot.Play();
         }
         else
         {

@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32781e4fd00ecdb45aaedcb9d5eda22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4917344051228646240, guid: 02bfaee5339ea3646a16c4463369da1e, type: 3}
+  bullet: {fileID: 114623218345261144, guid: 9e1a1ef6770c2f6428adea178d679ea2, type: 3}
   firePoint: {fileID: 4548667775465950758}
   isFiring: 0
   bulletSpeed: 40
@@ -1435,14 +1435,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b610d2ec5a9d21447a2b06b01a82aaf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverMenu: {fileID: 0}
+  pauseMenuScript: {fileID: 0}
+  gun: {fileID: 4548667774066964682}
   horizontalInput: 0
   verticalInput: 0
   speed: 10
   health: 100
-  gameOverMenu: {fileID: 0}
   gameIsOver: 0
-  pauseMenuScript: {fileID: 0}
-  gun: {fileID: 4548667774066964682}
 --- !u!1 &3577446193719512253
 GameObject:
   m_ObjectHideFlags: 0

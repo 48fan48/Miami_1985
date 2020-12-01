@@ -100,8 +100,6 @@ private static float playerScore;
                 animator.SetBool("WalkingForward", false);
                 // Set the gun script's variable is firing to true
                 gun.isFiring = true;
-                // Play the gun shot
-                gunShot.Play();
             }
             else 
             {
