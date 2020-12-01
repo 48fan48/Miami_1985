@@ -15,7 +15,7 @@ public class FirstAid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(0, 1, 0);
     }
 
     public void OnCollisionEnter(Collision other)
