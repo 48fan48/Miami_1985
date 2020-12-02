@@ -649,7 +649,7 @@ RectTransform:
   m_Children:
   - {fileID: 1978303462}
   m_Father: {fileID: 2016282153}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4272,7 +4272,7 @@ RectTransform:
   m_Children:
   - {fileID: 165498971}
   m_Father: {fileID: 2016282153}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4539,7 +4539,7 @@ RectTransform:
   - {fileID: 1562016280}
   - {fileID: 1038516854}
   m_Father: {fileID: 2116724195}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4740,7 +4740,7 @@ RectTransform:
   - {fileID: 1829602636}
   - {fileID: 241381804}
   m_Father: {fileID: 2116724195}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -6131,7 +6131,7 @@ RectTransform:
   m_Children:
   - {fileID: 904544696}
   m_Father: {fileID: 2016282153}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7131,11 +7131,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 594199327}
-  - {fileID: 130391636}
   - {fileID: 1795951787}
   - {fileID: 1149473489}
+  - {fileID: 130391636}
   m_Father: {fileID: 2116724195}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -7429,10 +7429,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 2016282153}
-  - {fileID: 363088884}
   - {fileID: 1274985724}
+  - {fileID: 363088884}
   - {fileID: 1300031186}
+  - {fileID: 2016282153}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
