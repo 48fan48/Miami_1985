@@ -62,6 +62,7 @@ private static float playerScore;
          // Destroy the enemy if the health is less than or equal to 0
         if(health <= 0) {
             isDead = true;
+            gun.isFiring = false;
             StartCoroutine(DeathAnimation());
         }
 
@@ -91,7 +92,7 @@ private static float playerScore;
         if(Physics.SphereCast(playerPos, 0.25f, out hitPlayer, fireRadius))
         {
             transform.LookAt(player.transform);
-            // Used so the enemy can't spam bullets; creates a time between shots
+            // If the ray is hitting the player, shoot at him
             if (hitPlayer.transform.tag == "Player")
             {
                 // Set the shooting animation to true
@@ -100,10 +101,6 @@ private static float playerScore;
                 animator.SetBool("WalkingForward", false);
                 // Set the gun script's variable is firing to true
                 gun.isFiring = true;
-            }
-            else 
-            {
-                gun.isFiring = false;
             }
         }
     } 
