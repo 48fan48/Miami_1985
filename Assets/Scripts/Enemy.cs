@@ -57,6 +57,7 @@ private static float playerScore;
         // The player is not within range
         else {
             playerInRange = false;
+            gun.isFiring = false;
         }
 
          // Destroy the enemy if the health is less than or equal to 0
