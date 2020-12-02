@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         // Get the gunshot audio
         // gunShot = GetComponent<AudioSource>();
         // Get the Pause Menu script
-        pauseMenuScript = GameObject.Find("Canvas").GetComponent<PauseMenu>();
+        pauseMenuScript = GameObject.Find("Canvas (3)").GetComponent<PauseMenu>();
     }
 
     // Update is called once per frame
