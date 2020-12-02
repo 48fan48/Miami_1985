@@ -8044,6 +8044,11 @@ PrefabInstance:
       propertyPath: gameOverMenu
       value: 
       objectReference: {fileID: 1670706805}
+    - target: {fileID: 4548667774195712142, guid: 63f2b640e94c80049b9ab863fcd698b9,
+        type: 3}
+      propertyPath: pauseMenuScript
+      value: 
+      objectReference: {fileID: 1542582826}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63f2b640e94c80049b9ab863fcd698b9, type: 3}
 --- !u!1001 &8142203763064700837
