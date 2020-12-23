@@ -1,7 +1,6 @@
 # Miami_1985
-CS 475 Game Development Course Project at West Virginia University Institute of Technology.
 
-CS 475 is a course at WVU Tech designed to teach students about the basics of Unity Game Development. Throughout the course, we covered different topics such as movements, scoring systems, animations and more.
+CS 475 is a course at West Virginia University Institute of Technology designed to teach students about the basics of Unity Game Development. Throughout the course, we covered different topics such as movements, scoring systems, animations and more.
 
 At the beginning of the course, we were tasked with coming up with an idea for a game to design as our course project. This information can be found on the 'CS475_Project_Proposal.pdf' document.
 
