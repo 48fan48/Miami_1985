@@ -1,4 +1,4 @@
-# Miami_1985
+# Miami 1985
 
 CS 475 is a course at West Virginia University Institute of Technology designed to teach students about the basics of Unity Game Development. Throughout the course, we covered different topics such as movements, scoring systems, animations and more.
 
