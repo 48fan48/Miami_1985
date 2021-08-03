@@ -1,3 +1,11 @@
+# Contributors
+
+[Jalen Wayt](https://github.com/iJMW)
+
+[John Clay](https://github.com/48fan48)
+
+[Logan Bland](https://github.com/Logan31and)
+
 # Miami 1985
 
 CS 475 is a course at West Virginia University Institute of Technology designed to teach students about the basics of Unity Game Development. Throughout the course, we covered different topics such as movements, scoring systems, animations and more.
